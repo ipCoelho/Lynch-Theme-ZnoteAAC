@@ -3,7 +3,11 @@
 <div class='page'>
 <div class='news'>
 <div class='contentn' style='width: auto;'>
-<h1>Downloads</h1>
+<h1><strong>Downloads</strong></h1>
+<a href="your/local/path/download/direct/link" class="default">Download Client</a><br>
+<p> <strong>How to edit the button below ?</strong>
+	<p> Enter on <strong>download.php</strong> file, found the <code>a href=""</code> style, then just add your local link, if you dont know please visit forum how to create a direct download link from your computer / host, <a href="https://lepiigortv.com/forum/index.php?threads/descarga-directa-del-cliente-desde-la-web.46/">here</a>, just translate page on your language.<br>
+		<p> Then just remove this lines from your php folder about this text.<br></br>
 <p>In order to play, you need an compatible IP changer and a Tibia client.</p>
 
 <p>Download IP changer <a href="https://github.com/jo3bingham/tibia-ip-changer/releases/latest">HERE</a>.</p>

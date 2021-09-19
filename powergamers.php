@@ -7,6 +7,10 @@ include 'layout/overall/footer.php';
 	exit();
 }
 ?>
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <div class="panel">
 <div class="page-header"><h3>Powergamers</h3></div>
 	<?php
@@ -35,10 +39,7 @@ include 'layout/overall/footer.php';
 
 	$showVoc = (!empty($vocation)) ? $vocation : 0;
 	?>
-	<article>
-<div class='page'>
-<div class='news'>
-<div class='contentn' style='width: auto;'>
+	
 	<form class="form form-inline" action="" method="post">
 		<div class="col sm-4">
 			<center>
@@ -67,7 +68,7 @@ include 'layout/overall/footer.php';
 <div class='news'>
 <div class='contentn' style='width: auto;'>
 	<table class="table table-striped">
-		<td width="5%"><center>#</center></td>
+		<td><center>#</center></td>
 		<td>Name</td>
 		<?php
 	for($i = 3; $i >= 2; $i--)

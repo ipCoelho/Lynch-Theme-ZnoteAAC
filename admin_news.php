@@ -24,6 +24,10 @@ if (empty($_POST) === false) {
 
 		<script src="engine/js/nicedit.js" type="text/javascript"></script>
 		<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<form action="" method="post">
 			<input type="hidden" name="option" value="i!0">
 			Select character:<select name="selected_char">
@@ -44,7 +48,7 @@ if (empty($_POST) === false) {
 			<input type="text" name="title" value="" placeholder="Title"> [youtube]wK0w0x62PjA[/youtube] <br />
 			<textarea name="text" id="area1" cols="75" rows="10" placeholder="Contents..." style="width: 100%"></textarea><br />
 			<input type="submit" value="Create News">
-		</form>
+		</form></div></div></div></article>
 
 		<?php
 		if ($count === 0) echo "<font size='6' color='red'>ERROR: NO GMs or Tutors on this account!</font>";
@@ -79,12 +83,16 @@ if (empty($_POST) === false) {
 		?>
 		<script src="engine/js/nicedit.js" type="text/javascript"></script>
 		<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<form action="" method="post">
 			<input type="hidden" name="option" value="s!<?php echo $id; ?>">
 			<input type="text" name="title" value="<?php echo $edit['title']; ?>"><br />
 			<textarea name="text" cols="75" rows="10" style="width: 100%"><?php echo $edit['text']; ?></textarea><br />
 			<input type="submit" value="Save Changes">
-		</form>
+		</form></div></div></div></article>
 		<br>
 		<p>
 			[b]<b>Bold Text</b>[/b]<br>

@@ -310,8 +310,8 @@ if ($render_page) {
 <div class='news'>
 <div class='contentn' style='width: auto;'>
 	<div id="myaccount">
-		<h1>My account</h1>
-		<p>Welcome to your account page, <font color="orange"><?php if ($config['ServerEngine'] !== 'OTHIRE') echo $user_data['name']; else echo $user_data['id']; ?></font><br>
+		<h2>My account</h2>
+		<p>Welcome to your account page, <font color="green"><?php if ($config['ServerEngine'] !== 'OTHIRE') echo $user_data['name']; else echo $user_data['id']; ?></font><br>
 			<div class="inner">
 		<?php if ($config['ServerEngine'] !== 'OTHIRE') {
 				if ($user_data['premdays'] != 0) {
@@ -343,28 +343,28 @@ if ($render_page) {
 			?>
 			<center><h4 style="color:gold"> Panel Admin </h4></center>
 			<hr>
-			<a href="admin.php" class="btn btn-primary btn-shiny btn-block">
+			<a href="admin.php" class="default">
 				<font color="orange">Admin Page</font></a>
 			
-			<a href="admin_news.php" class="btn btn-primary btn-shiny btn-block">
+			<a href="admin_news.php" class="default">
 				<font color="orange">Admin News</font></a>
 
-			<a href="admin_gallery.php" class="btn btn-primary btn-shiny btn-block">
+			<a href="admin_gallery.php" class="default">
 				<font color="orange">Admin Gallery</font></a>
 
-			<a href="admin_skills.php" class="btn btn-primary btn-shiny btn-block">
+			<a href="admin_skills.php" class="default">
 			<font color="orange">Admin Skills</font></a>
 			
-			<a href="admin_reports.php" class="btn btn-primary btn-shiny btn-block">
+			<a href="admin_reports.php" class="default">
 				<font color="orange">Admin Reports</font></a>
 		
-			<a href="admin_helpdesk" class="btn btn-primary btn-shiny btn-block">
+			<a href="admin_helpdesk" class="default">
 				<font color="orange">Admin Tickets</font></a>
 
-			<a href="admin_shop.php" class="btn btn-primary btn-shiny btn-block">
+			<a href="admin_shop.php" class="default">
 				<font color="orange">Admin Shop</font></a>
 		
-			<a href="admin_auction.php" class="btn btn-primary btn-shiny btn-block">
+			<a href="admin_auction.php" class="default">
 				<font color="orange">Admin Auction</font></a>
 
 			<?php
@@ -389,7 +389,7 @@ if ($render_page) {
 				}
 			}
 			?>
-			<a href="forum.php?cat=4" class="btn btn-primary btn-shiny btn-block">
+			<a href="forum.php?cat=4" class="default">
 				<font color="orange">Feedback [<?php echo $new; ?>] new</font></a>
 
 			<?php
@@ -397,19 +397,19 @@ if ($render_page) {
 			// end if admin
 			?>
 			<hr>
-			<a href="myaccount.php" class="btn btn-primary btn-shiny btn-block">
+			<a href="myaccount.php" class="default">
 				My Account</a>
 
-			<a href="createcharacter.php" class="btn btn-primary btn-shiny btn-block">
+			<a href="createcharacter.php" class="default">
 				Create Character</a>
 
-			<a href="changepassword.php" class="btn btn-primary btn-shiny btn-block">
+			<a href="changepassword.php" class="default">
 				Change Password</a>
 
-			<a href="settings.php" class="btn btn-primary btn-shiny btn-block">
+			<a href="settings.php" class="default">
 			Settings</a>
 			
-			<a href="logout.php" class="btn btn-primary btn-shiny btn-block">
+			<a href="logout.php" class="default">
 				Logout</a>
 		
 	</div></div></div></div></article>

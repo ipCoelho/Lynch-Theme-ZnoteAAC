@@ -54,7 +54,7 @@
 <a href='register.php' class='o3'>
 <span class='ntxt'></span>
 </a>
-<a href='download.php' class='o4'>
+<a href='downloads.php' class='o4'>
 <span class='ntxt'></span>
 </a>
 <span class='o5'>
@@ -78,9 +78,30 @@
 <a href='forum.php' class='forum-button' target='_blank'></a>
 <br>
 <aside>
+<?php if (user_logged_in() === true): ?>
 <div class='box'>
 <div class='title'>
-  
+<div class='bg'></div>
+<div class='txt'>User Control Panel</div>
+</div>
+<a href="myaccount.php" class="default">
+				My Account</a>
+
+			<a href="createcharacter.php" class="default">
+				Create Character</a>
+
+			<a href="changepassword.php" class="default">
+				Change Password</a>
+
+			<a href="settings.php" class="default">
+			Settings</a>
+			
+			<a href="logout.php" class="default">
+				Logout</a>
+
+<?php else: ?>
+<div class='box'>
+<div class='title'>
 <div class='bg'></div>
 <div class='txt'>User Control Panel</div>
 </div>
@@ -100,6 +121,7 @@
 <div class='anpc'>Don't have account? <a href='register.php'>Register</a></div>
 </form>
 </div>
+<?php endif; ?>
 </div><div class='box'>
 <div class='title'>
 <div class='bg'></div>
@@ -119,7 +141,7 @@
             if ($players) {
             $count = 1;
             foreach($players as $player) {
-            echo '<img style="margin-top: -35px; margin-left: -35px;" src="https://lepiigortv.com/animatedoutfits/animoutfit.php?id='.$player['looktype'].'&addons='.$player['lookaddons'].'&head='.$player['lookhead'].'&body='.$player['lookbody'].'&legs='.$player['looklegs'].'&feet='.$player['lookfeet'].'&g=0&h=3&i=1"></img> <a href="characterprofile.php?name='.$player['name'].'" style="color:orange">'.$player['name'].'&ensp;</a><strong>'. $player['level'].'</strong><br>';
+            echo '<img style="margin-top: -35px; margin-left: -35px;" src="https://lepiigortv.com/animatedoutfits/animoutfit.php?id='.$player['looktype'].'&addons='.$player['lookaddons'].'&head='.$player['lookhead'].'&body='.$player['lookbody'].'&legs='.$player['looklegs'].'&feet='.$player['lookfeet'].'&g=0&h=3&i=1"></img> <a href="characterprofile.php?name='.$player['name'].'" style="color:orange">'.$player['name'].'&ensp;</a><strong><font color="green">'. $player['level'].'</font></strong><br>';
            $count++;
             }
             }
