@@ -1,11 +1,11 @@
 # Lynch-Theme-Tibia-ZnoteAAC
 
 ### Development
-- Not Finished![cross-png-no-background-3-Transparent-Images](https://user-images.githubusercontent.com/89811188/133918747-1845f281-7b1b-4cca-89e1-8118a8349768.png)
+- Finished ![Hopstarter-Rounded-Square-Button-Ok](https://user-images.githubusercontent.com/89811188/133524779-24574036-77dd-4a81-b579-8c9c0a6db52e.png)
 
 ### Live Preview
 
-- Incoming
+- [LIVE Preview](https://lepiigortv.com/github_websites/lynch)
 
 - Forum: https://lepiigortv.com/forum
 

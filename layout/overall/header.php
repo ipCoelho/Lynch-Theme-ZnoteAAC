@@ -1,21 +1,22 @@
+<!-- Lynch Theme Created by Alex45
+     Forum: https://lepiigortv.com/forum
+     GitHub: https://github.com/open-games-community -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="imagetoolbar" content="no" />
-<meta name="keywords" content="Tibia, private server, online, real map, internacional, international, english, 1x, 5x, 10x, 30x, 50x, 70x, 100x, 150x, 200x, 300x, 1000x, free fun, new server, pt, es, mmropg, alex45, webdesigner, forum, server" />
+<meta name="keywords" content="Tibia, private server, online, real map, internacional, international, english, 1x, 5x, 10x, 30x, 50x, 70x, 100x, 150x, 200x, 300x, 1000x, free fun, new server, pt, es, mmropg, alex45, webdesigner, forum, server, custom map, 8.6, 10.98, 12x" />
 <meta name="description" content="Tibia Server" />
 <link rel="shortcut icon" href="imgs/favicon.ico">
 <title>Tibia Mmorpg Server</title>
-<link rel="image_src" href="imgs/image_src.jpg" />
 <meta property="og:title" content="Tibia Server" />
 <meta property="og:url" content="index.php" />
 <meta property="og:description" content="Tibia Server" />
+<link rel="stylesheet" type="text/css" href="css/lynch.css" media="all" />
 <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css" media="all" />
-<link rel="stylesheet" type="text/css" href="css/globalc4ca.css" media="all" />
 <script type="f85177f0a69a7dbb5202a20e-text/javascript" src="js/jquery-1.12.4.min.js"></script>
-<script type="f85177f0a69a7dbb5202a20e-text/javascript" src="js/globalc4ca.js"></script>
+<script type="f85177f0a69a7dbb5202a20e-text/javascript" src="js/lynch.js"></script>
 
 </head>
 <body>
@@ -25,6 +26,7 @@
 	
 <div class='langs'>
 </div>
+<!-- You can Add here a Google Translate element https://www.w3schools.com/howto/howto_google_translate.asp -->
 <div class='stt-txt'>
  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;Server <span class='on'>Online</span> Players Online:<a href="onlinelist.php"> <?php echo user_count_online();?></a></div>
 </div>
