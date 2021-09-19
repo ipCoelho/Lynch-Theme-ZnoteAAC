@@ -30,7 +30,12 @@ Forgotten Server is commonly known as TFS (The Forgotten Server) and Znote AAC s
 * PHP extension curl for PHPMailer, paypal and google reCaptcha services.
 * PHP extension openssl for google reCaptcha services.
 
+<<<<<<< HEAD
 ### Installation instructions
+=======
+![Sans titre](https://user-images.githubusercontent.com/89811188/133936945-4153bc82-5044-45e3-b6fd-d7242e8c6367.png)
+
+>>>>>>> c6ee031326917eaccd419df7e39be91e40e4ee8f
 
 1: Extract the .zip file to your web directory (Example: C:\UniServ\www\ )
 Without modifying config.php, enter the website and wait for mysql connection error.
