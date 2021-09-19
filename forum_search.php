@@ -51,6 +51,10 @@ if ($text !== false) {
 }
 
 ?>
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <h1>Search forum</h1>
 <form method="" type="get">
 	<select name="type">
@@ -63,7 +67,7 @@ if ($text !== false) {
 	</select>
 	<input type="text" name="text" value="<?php if ($text !== false) echo implode(' ', $text); ?>">
 	<input type="submit" value="Search">
-</form>
+</form></div></div></div>	</article>
 <?php
 
 if ($type !== false && $text !== false && $type <= 4 || $type > 4 && $type <= 6) {
@@ -189,7 +193,10 @@ if ($type !== false && $text !== false && $type <= 4 || $type > 4 && $type <= 6)
 		$count = 0;
 		foreach ($results as $r) if ($r['forum_id'] !== false) $count++;
 		if ($count > 0) {
-			?>
+			?><article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<table>
 				<tr>
 					<th>Char</th>
@@ -214,7 +221,7 @@ if ($type !== false && $text !== false && $type <= 4 || $type > 4 && $type <= 6)
 					}
 				}
 				?>
-			</table>
+			</table></div></div></div></article>
 			<?php
 		} else echo "No results.";
 	} else echo "No results.";

@@ -27,6 +27,10 @@ if (empty($_POST) === false) {
 	}
 }
 ?>
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <h1>Settings</h1>
 
 <?php
@@ -86,7 +90,7 @@ if (isset($_GET['success']) === true && empty($_GET['success']) === true) {
 				<input type="submit" value="Update settings">
 			</li>
 		</ul>
-	</form>
+	</form></div></div></div></article>
 <?php
 }
 include 'layout/overall/footer.php';

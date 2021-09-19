@@ -126,6 +126,10 @@
 
 if (!empty($guilds) && $guilds !== false) {
 	?>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<h3><center>Top 10 guilds with most frags</center></h3>
 	<table id="onlinelistTable" class="table table-striped table-hover">
 	    <tr class="yellow">
@@ -147,7 +151,7 @@ if (!empty($guilds) && $guilds !== false) {
 		    </tr>
 	    	<?php
 		endforeach; ?>
-	</table>
+	</table></div></div></div></article>
 	<?php
 } else {
 	echo '<h1>No frags yet.</h1>';

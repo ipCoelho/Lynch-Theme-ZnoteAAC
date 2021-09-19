@@ -105,6 +105,10 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 		echo '</b></font>';
 	}
 	?>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<form action="" method="post">
 		<ul>
 			<li>
@@ -159,7 +163,7 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 				<input type="submit" value="Create Character">
 			</li>
 		</ul>
-	</form>
+	</form></div></div></div></article>
 	<?php
 }
 include 'layout/overall/footer.php'; ?>

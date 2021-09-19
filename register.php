@@ -90,6 +90,10 @@ if (empty($_POST) === false) {
 }
 
 ?>
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <h1>Register Account</h1>
 <?php
 if (isset($_GET['success']) && empty($_GET['success'])) {
@@ -222,7 +226,7 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 				<input type="submit" value="Create Account">
 			</li>
 		</ul>
-	</form>
+	</form></div></div></div></article>
 <?php
 }
 include 'layout/overall/footer.php';

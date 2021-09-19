@@ -65,6 +65,10 @@ if ($cache->hasExpired()) {
 if ($vocGroups) {
 	$vocGroup = (is_array($vocGroups[$vocation])) ? $vocGroups[$vocation] : $vocGroups[$vocGroups[$vocation]];
 	?>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 
 	<h1>Ranking for <?php echo skillName($type) .", ". (($vocation === 'all') ? 'any vocation' : vocation_id_to_name($vocation)) ?>.</h1>
 
@@ -106,8 +110,11 @@ if ($vocGroups) {
 		</select>
 
 		<input type="submit" value=" View " class="btn btn-info">
-	</form>
-
+	</form></div></div></div></article>
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<table id="highscoresTable" class="table table-striped table-hover">
 
 		<tr class="yellow">
@@ -146,7 +153,7 @@ if ($vocGroups) {
 			}
 		}
 		?>
-	</table>
+	</table></div></div></div></article>
 	<?php
 }
 include 'layout/overall/footer.php'; ?>

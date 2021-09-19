@@ -27,6 +27,10 @@ if ($view !== false) {
 		die;
 	}
 	?>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<h1>View Ticket #
 	<?php
 		echo $ticketData['id'];
@@ -51,12 +55,16 @@ if ($view !== false) {
 				<p><?php echo nl2br($ticketData['message']); ?></p>
 			</td>
 		</tr>
-	</table>
+	</table></div></div></div></article>
 	<?php
 	$replies = mysql_select_multi("SELECT * FROM znote_tickets_replies WHERE tid='$view' ORDER BY `created`;");
 	if ($replies !== false) {
 		foreach($replies as $reply) {
 			?>
+			<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<table class="znoteTable ThreadTable table table-striped">
 				<tr class="yellow">
 					<th>
@@ -74,19 +82,23 @@ if ($view !== false) {
 						<p><?php echo nl2br($reply['message']); ?></p>
 					</td>
 				</tr>
-			</table>
-			<hr class="bighr">
+			</table></div></div></div></article>
+			
 		<?php
 		}
 	}
 	?>
 
 	<?php if ($ticketData['status'] !== 'CLOSED') { ?>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<form action="" method="post">
 			<input type="hidden" name="username" value="<?php echo $ticketData['username']; ?>"><br>
 			<textarea class="forumReply" name="reply_text" style="width: 610px; height: 150px"></textarea><br>
 			<input name="" type="submit" value="Post Reply" class="btn btn-primary">
-		</form>
+		</form></div></div></div></article>
 	<?php } ?>
 	<?php
 } else {
@@ -119,6 +131,10 @@ if ($view !== false) {
 		}
 	}
 	?>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<h1>Latest Tickets</h1>
 	<?php
 	$tickets = mysql_select_multi("SELECT id,subject,creation,status FROM znote_tickets WHERE owner=$session_user_id ORDER BY creation DESC");
@@ -181,6 +197,7 @@ if ($view !== false) {
 			echo '</b></font>';
 		}
 		?>
+		
 		<form action="" method="post">
 			<ul>
 				<li>
@@ -217,7 +234,7 @@ if ($view !== false) {
 					<input type="submit" value="Submit ticket">
 				</li>
 			</ul>
-		</form>
+		</form></div></div></div></article>
 		<?php
 	}
 }

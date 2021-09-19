@@ -35,6 +35,10 @@ include 'layout/overall/footer.php';
 
 	$showVoc = (!empty($vocation)) ? $vocation : 0;
 	?>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<form class="form form-inline" action="" method="post">
 		<div class="col sm-4">
 			<center>
@@ -57,7 +61,11 @@ include 'layout/overall/footer.php';
 			<?php echo ($days > 0) ? 'sorted by <b>'. $days .'</b> days': 'sorted by <b>today</b>'; 	?>.
 			</center>
 		</div>
-	</form>
+	</form></div></div></div></article>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<table class="table table-striped">
 		<td width="5%"><center>#</center></td>
 		<td>Name</td>
@@ -85,7 +93,7 @@ include 'layout/overall/footer.php';
 		}
 	}
 	?>
-	</table>
+	</table></div></div></div></article>
 	<br>
 </div>
 <?php

@@ -37,6 +37,10 @@ if (empty($_POST) === false && $config['ServerEngine'] === 'TFS_03') {
 			<h2>
 				<?php echo ucfirst(town_id_to_name($townid)); ?> house list.
 			</h2>
+			<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<div class="well widget">
 				<div class="header">
 					Town list / houses
@@ -53,7 +57,11 @@ if (empty($_POST) === false && $config['ServerEngine'] === 'TFS_03') {
 						<input type="submit" value="Fetch houses">
 					</form>
 				</div>
-			</div>
+			</div></div></div></div></article>
+			<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<table id="housesTable" class="table table-striped">
 				<tr class="yellow">
 					<th>Name:</th>
@@ -86,7 +94,7 @@ if (empty($_POST) === false && $config['ServerEngine'] === 'TFS_03') {
 						echo '</tr>';
 					}
 					?>
-			</table>
+			</table></div></div></div></article>
 			<?php
 		} else {
 			echo 'Empty list, it appears no houses are listed in this town.';
@@ -100,6 +108,10 @@ if (empty($_POST) === false && $config['ServerEngine'] === 'TFS_03') {
 } else {
 	if (empty($_POST) === true && $config['ServerEngine'] === 'TFS_03') {
 		?>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<div class="well widget">
 			<div class="header">
 				Town list / houses
@@ -116,7 +128,7 @@ if (empty($_POST) === false && $config['ServerEngine'] === 'TFS_03') {
 					<input type="submit" value="Fetch houses">
 				</form>
 			</div>
-		</div>
+		</div></div></div></div></article>
 		<?php
 	} else if ($config['ServerEngine'] === 'TFS_02' || $config['ServerEngine'] == 'OTHIRE') {
 		$house = $config['house'];
@@ -139,6 +151,10 @@ if (empty($_POST) === false && $config['ServerEngine'] === 'TFS_03') {
 		$house_load = simplexml_load_file($house['house_file']);
 		if ($house_query !== false && $house_load !== false) {
 			?>
+			<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<h2>House list</h2>
 			<table>
 				<tr class="yellow">
@@ -177,7 +193,7 @@ if (empty($_POST) === false && $config['ServerEngine'] === 'TFS_03') {
 					<?php
 				}
 				?>
-			</table>
+			</table></div></div></div></article>
 			<?php
 		} else echo '<p><font color="red">Something is wrong with the cache.</font></p>';
 	} else if ($config['ServerEngine'] === 'TFS_10') {
@@ -191,6 +207,10 @@ if (empty($_POST) === false && $config['ServerEngine'] === 'TFS_03') {
 
 		// Create Search house box
 		?>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<form action="" method="get" class="houselist">
 			<table>
 				<tr>
@@ -232,7 +252,7 @@ if (empty($_POST) === false && $config['ServerEngine'] === 'TFS_03') {
 					</td>
 				</tr>
 			</table>
-		</form>
+		</form></div></div></div></article>
 		<?php
 		if(!in_array($order, $order_allowed))
 			$order = 'id';
@@ -277,6 +297,10 @@ if (empty($_POST) === false && $config['ServerEngine'] === 'TFS_03') {
 			// Intialize stuff
 			//data_dump($houses, false, "House data");
 			?>
+			<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<table id="housetable">
 				<tr class="yellow">
 					<th>Name</th>
@@ -311,7 +335,7 @@ if (empty($_POST) === false && $config['ServerEngine'] === 'TFS_03') {
 					}
 				}
 				?>
-			</table>
+			</table></div></div></div></article>
 
 			<?php
 		} else

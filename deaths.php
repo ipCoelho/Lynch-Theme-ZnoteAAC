@@ -14,6 +14,10 @@ if ($cache->hasExpired()) {
 }
 if ($deaths) {
 ?>
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <h1>Latest Deaths</h1>
 <table id="deathsTable" class="table table-striped">
 	<tr class="yellow">
@@ -33,7 +37,7 @@ if ($deaths) {
 		else echo "<td>". $death['killed_by'] ."</td>";
 		echo '</tr>';
 	} ?>
-</table>
+</table></div></div></div></article>
 <?php
 } else echo 'No deaths exist.';
 include 'layout/overall/footer.php'; ?>

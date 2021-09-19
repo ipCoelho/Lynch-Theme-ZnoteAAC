@@ -37,7 +37,10 @@ if ($cache->hasExpired()) {
 
 if (!empty($array) && $array !== false) {
 	?>
-
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<table id="onlinelistTable" class="table table-striped table-hover">
 		<tr class="yellow">
 			<?php if ($loadOutfits) echo "<th>Outfit</th>"; ?>
@@ -64,7 +67,7 @@ if (!empty($array) && $array !== false) {
 			<?php
 		}
 		?>
-	</table>
+	</table></div></div></div></article>
 
 	<?php
 } else {

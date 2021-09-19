@@ -53,6 +53,10 @@ if (isset($_GET['name']) === true && empty($_GET['name']) === false) {
 		?>
 
 		<!-- PROFILE MARKUP HERE-->
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<table id="characterProfileTable">
 			<thead>
 				<tr class="yellow">
@@ -614,10 +618,14 @@ if (isset($_GET['name']) === true && empty($_GET['name']) === false) {
 				<?php endif; ?>
 				<!-- End EQ shower -->
 			</tbody>
-		</table>
+		</table></div></div></div></article>
 
 		<!-- Player Comment -->
 		<?php if (!empty($profile_znote_data['comment'])): ?>
+			<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<table class="comment">
 				<thead>
 					<tr class="yellow">
@@ -629,7 +637,7 @@ if (isset($_GET['name']) === true && empty($_GET['name']) === false) {
 						<td><?php echo preg_replace('/\v+|\\\r\\\n/','<br/>',$profile_znote_data['comment']); ?></td>
 					</tr>
 				</tbody>
-			</table>
+			</table></div></div></div></article>
 		<?php endif; ?>
 
 		<!-- Achievements start -->
@@ -646,6 +654,10 @@ if (isset($_GET['name']) === true && empty($_GET['name']) === false) {
 				'hide' => '<a href="#hide">Hide</a>'
 			);
 			if ($achievements !== false): ?>
+				<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 				<h3>Achievements: <label id="ac_label_hide" for="ac_toggle_hide"><?php echo $toggle['show']; ?></label></h3>
 				<!-- <div id="accordion">
 					<h3>Show/hide player achievements</h3>
@@ -671,7 +683,7 @@ if (isset($_GET['name']) === true && empty($_GET['name']) === false) {
 							</tr>
 						<?php endforeach; ?>
 					</tbody>
-				</table>
+				</table></div></div></div></article>
 				<style type="text/css">
 					table.achievements,
 					#ac_toggle_hide {
@@ -697,6 +709,10 @@ if (isset($_GET['name']) === true && empty($_GET['name']) === false) {
 		<?php endif; ?>
 
 		<!-- DEATH LIST -->
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<table class="deathlist">
 			<thead>
 				<tr class="yellow">
@@ -823,7 +839,7 @@ if (isset($_GET['name']) === true && empty($_GET['name']) === false) {
 				}
 				?>
 			</tbody>
-		</table>
+		</table></div></div></div></article>
 
 		<!-- QUEST PROGRESSION -->
 		<?php
@@ -850,6 +866,10 @@ if (isset($_GET['name']) === true && empty($_GET['name']) === false) {
 					if ($cquest[3] == 1) {
 						if ($completedquests != 0) {
 							if ($firstrun == 1): ?>
+								<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 								<b> Quest progression </b>
 								<table id="characterprofileQuest" class="table table-striped table-hover">
 									<thead>
@@ -881,7 +901,7 @@ if (isset($_GET['name']) === true && empty($_GET['name']) === false) {
 		}
 
 		if ($firstrun == 0): ?>
-			</tbody></table>
+			</tbody></table></div></div></div></article>
 		<?php endif; ?>
 		<!-- END QUEST PROGRESSION -->
 
@@ -922,6 +942,10 @@ if (isset($_GET['name']) === true && empty($_GET['name']) === false) {
 		// Render table if there are any characters to show
 		if ($otherChars !== false) {
 			?>
+			<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<li>
 				<b>Other visible characters on this account:</b><br>
 				<table id="characterprofileTable" class="table table-striped table-hover">
@@ -947,7 +971,7 @@ if (isset($_GET['name']) === true && empty($_GET['name']) === false) {
 					endforeach;
 					?>
 				</table>
-			</li>
+			</li></div></div></div></article>
 			<?php
 		}
 		?>

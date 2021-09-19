@@ -250,7 +250,10 @@ if ($admin && !empty($_POST)) {
 		$category = mysql_select_single("SELECT `id`, `name`, `access`, `closed`, `hidden`, `guild_id`
 			FROM `znote_forum` WHERE `id`='$admin_category_id' LIMIT 1;");
 		if ($category !== false) {
-			?>
+			?><article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<form action="" method="post">
 				<input type="hidden" name="admin_category_id" value="<?php echo $category['id']; ?>">
 				<table class="updateTable table table-striped">
@@ -313,7 +316,7 @@ if ($admin && !empty($_POST)) {
 						<td colspan="2"><input type="submit" name="admin_update_category" value="Update Board" style="width: 100%; height: 30px;" class="btn btn-success"></td>
 					</tr>
 				</table>
-			</form>
+			</form></div></div></div></article>
 			<?php
 		} else echo '<h2>Category not found.</h2>';
 
@@ -495,12 +498,16 @@ if (!empty($_GET)) {
 
 		if ($access) {
 			?>
+			<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<h1>Edit Post</h1>
 			<form type="" method="post">
 				<input name="update_post_id" type="hidden" value="<?php echo $post['id']; ?>">
 				<textarea name="update_post_text" style="width: 610px; height: 300px"><?php echo $post['text']; ?></textarea><br>
 				<input type="submit" value="Update Post" class="btn btn-success">
-			</form>
+			</form></div></div></div></article>
 			<?php
 		} else echo '<p><b><font color="red">You don\'t have permission to edit this post.</font></b></p>';
 	} else
@@ -517,13 +524,17 @@ if (!empty($_GET)) {
 
 		if ($access) {
 			?>
+			<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<h1>Edit Thread</h1>
 			<form type="" method="post">
 				<input name="update_thread_id" type="hidden" value="<?php echo $thread['id']; ?>">
 				<input name="update_thread_title" type="text" value="<?php echo $thread['title']; ?>" style="width: 500px;"><br><br>
 				<textarea name="update_thread_text" style="width: 610px; height: 300px"><?php echo $thread['text']; ?></textarea><br>
 				<input type="submit" value="Update Thread" class="btn btn-success">
-			</form>
+			</form></div></div></div></article>
 			<?php
 		} else echo '<p><b><font color="red">Edit access denied.</font></b></p>';
 	} else
@@ -556,8 +567,13 @@ if (!empty($_GET)) {
 			if ($access) {
 				$threadPlayer = ($config['forum']['outfit_avatars'] || $config['forum']['player_position']) ? mysql_select_single("SELECT `id`, `group_id`, `sex`, `lookbody`, `lookfeet`, `lookhead`, `looklegs`, `looktype`, `lookaddons` FROM `players` WHERE `id`='".$threadData['player_id']."';") : false;
 				?>
+
 				<font>LinkMap: <a href="forum.php">Forum</a> - <a href="?cat=<?php echo $getCat; ?>"><?php echo $getForum; ?></a></font><br>
 				<font size="5" id="ThreadTitle">Viewing thread: <?php echo "<a href='?forum=". $getForum ."&cat=". $getCat ."&thread=". $threadData['id'] ."'>". $threadData['title'] ."</a>"; ?></font>
+				<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 				<table class="znoteTable ThreadTable table table-striped">
 					<tr class="yellow">
 						<th<?php if ($threadPlayer !== false) echo ' colspan="2"'; ?>>
@@ -587,13 +603,17 @@ if (!empty($_GET)) {
 							<p><?php echo nl2br(TransformToBBCode($threadData['text'])); ?></p>
 						</td>
 					</tr>
-				</table>
-				<hr class="bighr">
+				</table></div></div></div>	</article>
+							
 				<?php
 				if ($admin || $leader) {
 					// PlayerHaveAccess($yourChars, $thread['player_name']) ||
 					// $yourChars
 					?>
+					<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 					<table class="adminTable table">
 						<tr>
 							<td>
@@ -635,11 +655,15 @@ if (!empty($_GET)) {
 								</form>
 							</td>
 						</tr>
-					</table>
+					</table></div></div></div>	</article>
 					<?php
 				} else {
 					if ($threadData['closed'] == 0 && PlayerHaveAccess($yourChars, $threadData['player_name'])) {
 						?>
+						<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 						<table class="editThread">
 							<tr>
 								<td>
@@ -649,7 +673,7 @@ if (!empty($_GET)) {
 									</form>
 								</td>
 							</tr>
-						</table>
+						</table></div></div></div>	</article>
 						<?php
 					}
 				}
@@ -677,6 +701,10 @@ if (!empty($_GET)) {
 
 					foreach($posts as $post) {
 						?>
+						<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 						<table class="znoteTable ThreadTable table table-striped">
 							<tr class="yellow">
 								<th<?php if ($extra) echo ' colspan="2"'; ?>>
@@ -703,9 +731,8 @@ if (!empty($_GET)) {
 									<p><?php echo nl2br(TransformToBBCode($post['text'])); ?></p>
 								</td>
 							</tr>
-						</table>
-						<hr class="bighr">
-						<?php
+						</table></div></div></div>	</article>
+												<?php
 						if (PlayerHaveAccess($yourChars, $post['player_name']) || $admin) {
 							if ($admin) {
 								?>
@@ -731,6 +758,10 @@ if (!empty($_GET)) {
 				if ($charCount > 0) {
 					if ($threadData['closed'] == 0 || $yourAccess > 3) {
 						?>
+						<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 						<form action="" method="post">
 							<input name="reply_thread" type="hidden" value="<?php echo $threadData['id']; ?>"><br>
 
@@ -745,7 +776,7 @@ if (!empty($_GET)) {
 								?>
 							</select>
 							<input name="" type="submit" value="Post Reply" class="btn btn-primary">
-						</form>
+						</form></div></div></div>	</article>
 						<?php
 					} else echo '<p><b>You don\'t have permission to post on this thread. [Thread: Closed]</b></p>';
 				} else {
@@ -795,6 +826,10 @@ if (!empty($_GET)) {
 
 			if ($access) {
 				?>
+				<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 				<h1>Create new thread</h1>
 				<form type="" method="post">
 					<input type="text" disabled value="<?php echo $charData[$new_thread_cid]['name']; ?>" style="width: 100px;">
@@ -804,6 +839,7 @@ if (!empty($_GET)) {
 					<textarea name="create_thread_text" style="width: 610px; height: 300px" placeholder="Thread text"></textarea><br>
 					<input type="submit" value="Create Thread" class="btn btn-success">
 				</form>
+				</div></div></div>	</article>
 				<?php
 			} else echo '<p><b><font color="red">Permission to create thread denied.</font></b></p>';
 		}
@@ -835,6 +871,10 @@ if (!empty($_GET)) {
 			///// HTML \\\\\
 			if ($threads !== false) {
 				?>
+				<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 				<table class="znoteTable table table-bordered table-striped table-hover" id="forumThreadTable">
 					<tr class="yellow">
 						<th width="80%">Title</th>
@@ -877,7 +917,7 @@ if (!empty($_GET)) {
 						}
 					}
 					?>
-				</table>
+				</table></div></div></div>	</article>
 				<?php
 			} else echo 'Board is empty, no threads exist yet.';
 
@@ -886,6 +926,10 @@ if (!empty($_GET)) {
 			if ($charCount > 0) {
 				if ($category['closed'] == 0  || $admin) {
 					?>
+					<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 					<form action="" method="post">
 						<input type="hidden" value="<?php echo $getCat; ?>" name="new_thread_category">
 						<select name="new_thread_cid" multiple="multiple">
@@ -896,7 +940,7 @@ if (!empty($_GET)) {
 							?>
 						</select>
 						<input type="submit" value="Create new thread" class="btn btn-primary">
-					</form>
+					</form></div></div></div>	</article>
 					<?php
 				} else echo '<p>This board is closed.</p>';
 			} else echo "<p>You must have a character on your account that is level ". $config['forum']['level'] ."+ to create new threads.</p>";
@@ -913,6 +957,10 @@ if (!empty($_GET)) {
 
 	$guildboard = false;
 	?>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<table class="znoteTable table table-striped table-hover" id="forumCategoryTable">
 		<tr class="yellow">
 			<th>Forum Boards</th>
@@ -989,12 +1037,16 @@ if (!empty($_GET)) {
 			}
 		}
 		?>
-	</table>
-	<hr class="bighr">
+	</table></div></div></div>	</article>
+	
 	<?php
 	if ($guildboard !== false && $guild || $guildboard !== false && $admin) {
 		//
 		?>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<table class="table table-striped table-hover znoteTable" id="forumCategoryTable">
 			<tr class="yellow">
 				<th>Guild Boards</th>
@@ -1064,11 +1116,15 @@ if (!empty($_GET)) {
 			}
 			if ($count == 0 && !$admin) echo '<tr><td>You don\'t have access to any guildboards.</td></tr>';
 			?>
-		</table>
+		</table></div></div></div>	</article>
 		<?php
 	}
 	if ($admin) {
 		?>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<h2>Create board:</h2>
 		<form action="" method="post">
 			<input type="text" name="admin_board_create_name" placeholder="Board name"><br><br>
@@ -1101,7 +1157,7 @@ if (!empty($_GET)) {
 			</select><br><br>
 
 			<input type="submit" value="Create Board" class="btn btn-primary">
-		</form>
+		</form></div></div></div>	</article>
 		<?php
 	}
 

@@ -10,11 +10,15 @@ $compare = &$_GET['compare'];
 // So if $items is not an array, send an error message, include the footer and ignore rest of this page.
 if (is_array($items) === false):
 	?>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<h1>Marketplace</h1>
 	<p>Failed to load item list.</p>
 	<p>Attempted to load this file: <?php echo $items; ?></p>
 	<p>Configure correct 'server_path' in config.php.</p>
-	<p>If the path is correct, make sure your web user has access to read it.</p>
+	<p>If the path is correct, make sure your web user has access to read it.</p></div></div></div></article>
 	<?php
 	include 'layout/overall/footer.php';
 	die();
@@ -35,6 +39,10 @@ if (!$compare) {
 		$offers = $cache->load();
 	}
 	?>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<h1>Marketplace</h1>
 	<p>You can buy and sell items by clicking on the <a target="_BLANK" href="http://znote.eu/images/depotmarket.jpg">market in depot.</a> <br>To sell an item: Place item inside your depot, click on market, search for your item and sell it.</p>
 	<form action="" class="market_item_search">
@@ -95,7 +103,7 @@ if (!$compare) {
 		<?php
 		}
 		?>
-	</table>
+	</table></div></div></div></article>
 	<?php
 } else {
 	// Else You want to compare price
@@ -128,6 +136,10 @@ if (!$compare) {
 	if (!is_string($compare)) echo "<h1>Comparing item: ". $itemname ."</h1>";
 	else echo "<h1>Search: ". stripslashes($compare) ."</h1>";
 	?>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<a href="market.php"><button>Go back</button></a>
 	<h2>Active offers</h2>
 	<table class="table tbl-hover">
@@ -160,10 +172,14 @@ if (!$compare) {
 			}
 		}
 		?>
-	</table>
+	</table></div></div></div></article>
 	<?php
 	if ($buylist !== false) {
 		?>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<h2>Want to buy:</h2>
 		<table class="table tbl-hover">
 			<tr class="yellow">
@@ -188,10 +204,14 @@ if (!$compare) {
 				<?php
 			}
 			?>
-		</table>
+		</table></div></div></div></article>
 		<?php
 	}
 	?>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<h2>Old purchased offers</h2>
 	<table class="table tbl-hover">
 		<tr class="yellow">
@@ -214,7 +234,7 @@ if (!$compare) {
 		<?php
 		}
 		?>
-	</table>
+	</table></div></div></div></article>
 	<?php
 }
 include 'layout/overall/footer.php'; ?>

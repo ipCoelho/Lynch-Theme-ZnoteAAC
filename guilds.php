@@ -57,6 +57,10 @@ $guilds = guild_list($config['ServerEngine']);
 if (isset($guilds) && !empty($guilds) && $guilds !== false) {
 	//data_dump($guilds, false, "Guilds");
 ?>
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <table id="guildsTable" class="table table-striped table-hover">
 	<tr class="yellow">
 		<th>Logo</th>
@@ -88,7 +92,7 @@ if (isset($guilds) && !empty($guilds) && $guilds !== false) {
 			}
 		}
 		?>
-</table>
+</table></div></div></div></article>
 <?php } else echo '<p>Guild list is empty.</p>';?>
 <!-- user stuff -->
 <?php
@@ -144,6 +148,10 @@ if (user_logged_in() === true) {
 
 
 	<!-- FORMS TO CREATE GUILD-->
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<form action="" method="post">
 		<ul>
 			<li>
@@ -160,7 +168,7 @@ if (user_logged_in() === true) {
 				<input type="submit" value="Create Guild">
 			</li>
 		</ul>
-	</form>
+	</form></div></div></div></article>
 
 	<?php
 } else echo 'You need to be logged in to create guilds.';
@@ -214,7 +222,10 @@ if (user_logged_in() === true) {
 	}
 	// Display the specific guild page
 ?>
-
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <div id="guildTitleDiv">
 	<?php echo (isset($_GET['error'])) ? "<font size='5' color='red'>".sanitize($_GET['error'])."</font><br><br>" : ""; ?>
 	<?php if ($config['use_guild_logos']): ?>
@@ -269,9 +280,13 @@ if (user_logged_in() === true) {
 			echo '</tr>';
 		}
 		?>
-</table>
+</table></div></div></div></article>
 
 <?php if ($inv_count > 0) { ?>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <h3>Invited characters</h3>
 <table>
 	<tr class="yellow">
@@ -342,7 +357,7 @@ if (user_logged_in() === true) {
 			echo '</tr>';
 		}
 		?>
-</table>
+</table></div></div></div></article>
 <?php } ?>
 <!-- Leader stuff -->
 <?php
@@ -642,14 +657,17 @@ if ($highest_access >= 2) {
 			if ($config['forum']['guildboard'] === true && $config['forum']['enabled'] === true) {
 				$forumExist = mysql_select_single("SELECT `id` FROM `znote_forum` WHERE `guild_id`='$gid' LIMIT 1;");
 				if ($forumExist === false) {
-					?>
+					?><article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 					<form action="" method="post">
 						<ul>
 							<li>Create forum guild board:<br>
 							<input type="hidden" name="forumGuildId" value="<?php echo $gid; ?>">
 							<input type="submit" value="Create Guild Board">
 						</ul>
-					</form>
+					</form></li></ul></form></div>
 					<?php
 				}
 			}
@@ -657,7 +675,10 @@ if ($highest_access >= 2) {
 		if ($config['use_guild_logos']) {
 
 		?>
-
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<!-- form to upload guild logo -->
 			<form action="" method="post" enctype="multipart/form-data">
 				<ul>
@@ -666,7 +687,7 @@ if ($highest_access >= 2) {
 						<input type="submit" name="submit" value="Upload guild logo">
 					</li>
 				</ul>
-			</form>
+			</form></div></div></div></article>
 
 		<?php
 
@@ -679,6 +700,10 @@ if ($highest_access >= 2) {
 
 		} ?>
 		<!-- forms to invite character -->
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<form action="" method="post">
 			<ul>
 				<li>Invite Character to guild:<br>
@@ -686,8 +711,12 @@ if ($highest_access >= 2) {
 					<input type="submit" value="Invite Character">
 				</li>
 			</ul>
-		</form>
+		</form></div></div></div></article>
 		<!-- Guild message of the day motd -->
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<form action="" method="post">
 			<ul>
 				<li>Change guild message:</li>
@@ -696,9 +725,13 @@ if ($highest_access >= 2) {
 					<input type="submit" value="Update guild message">
 				</li>
 			</ul>
-		</form>
+		</form></div></div></div></article>
 		<?php if ($config['guild_allow_nicknames']): ?>
 		<!-- FORMS TO CHANGE GUILD NICK -->
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<form action="" method="post">
 				<ul>
 					<li>
@@ -723,11 +756,15 @@ if ($highest_access >= 2) {
 						<input type="submit" value="Change Nick">
 					</li>
 				</ul>
-			</form>
+			</form></div></div></div></article>
 		<?php endif; ?>
 		<!-- END FORMS TO CHANGE GUILD NICK -->
 		<?php if ($members > 1) { ?>
 		<!-- FORMS TO PROMOTE CHARACTER-->
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<form action="" method="post">
 			<ul>
 				<li>
@@ -761,8 +798,12 @@ if ($highest_access >= 2) {
 					<input type="submit" value="Promote Member">
 				</li>
 			</ul>
-		</form>
+		</form></div></div></div></article>
 		<!-- Remove member from guild -->
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<form action="" method="post">
 			<ul>
 				<li>
@@ -783,11 +824,15 @@ if ($highest_access >= 2) {
 					<input type="submit" value="Remove member">
 				</li>
 			</ul>
-		</form>
+		</form></div></div></div></article>
 		<?php } ?>
 		<br><br>
 		<?php if ($highest_access == 3) { ?>
 		<!-- forms to change rank titles -->
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<form action="" method="post">
 			<ul>
 				<li><b>Change rank titles:</b><br>
@@ -801,8 +846,12 @@ if ($highest_access >= 2) {
 					<input type="submit" value="Update Ranks">
 				</li>
 			</ul>
-		</form>
+		</form></div></div></div></article>
 		<!-- forms to disband guild -->
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<form action="" method="post">
 			<ul>
 				<li><b>DELETE GUILD (All members must be offline):</b><br>
@@ -810,9 +859,13 @@ if ($highest_access >= 2) {
 					<input type="submit" value="Disband Guild">
 				</li>
 			</ul>
-		</form>
+		</form></div></div></div></article>
 		<!-- forms to change leadership-->
 		<?php if ($members > 1) { ?>
+			<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<form action="" method="post">
 			<ul>
 				<li><b>Change Leadership with:</b><br>
@@ -830,9 +883,13 @@ if ($highest_access >= 2) {
 					<input type="submit" value="Change Leadership">
 				</li>
 			</ul>
-		</form>
+		</form></div></div></div></article>
 		<?php } ?>
 		<?php if ($config['ServerEngine'] == 'TFS_02' || $config['ServerEngine'] == 'OTHIRE' || $config['ServerEngine'] == 'TFS_10' && $config['guildwar_enabled'] === true) { ?>
+			<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<h2>Guild War Management:</h2>
 		<form action="" method="post">
 			<ul>
@@ -842,11 +899,15 @@ if ($highest_access >= 2) {
 					<input type="submit" value="Invite Guild">
 				</li>
 			</ul>
-		</form>
+		</form></div></div></div></article>
 		<style type="text/css">
 			form {display: inline;}
 			#btnspace{margin-left:100px;}
 		</style>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<table id="guildsTable" class="table table-striped table-hover"><tr class="yellow"><th>Aggressor</th><th>Information</th><th>Enemy</th></tr>
 		<?php
 		$i = 0;
@@ -868,7 +929,7 @@ if ($highest_access >= 2) {
 
 			if ($i == 0)
 				echo '<tr><td colspan="3"><center>Currently there are no pending invitations.</center></td></tr>';
-				echo '</table>';
+				echo '</table></div></div></div></article>';
 		} } ?>
 		<?php
 	}
@@ -888,6 +949,10 @@ if ($config['guildwar_enabled'] === true) {
 	}
 	if ($war_exist) {
 		?>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<h2>War overview:</h2>
 		<table>
 			<tr class="yellow">
@@ -909,7 +974,7 @@ if ($config['guildwar_enabled'] === true) {
 					}
 				}
 				?>
-		</table>
+		</table></div></div></div></article>
 		<?php
 	}
 }
@@ -929,7 +994,10 @@ if ($forumExist !== false) {
 	?> - <font size="4"><a href="forum.php?cat=<?php echo $forumExist['id']; ?>">Visit Guild Board</a></font><br><br><br><?php
 }
 ?>
-
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <form action="" method="post">
 	<ul>
 		<li>
@@ -951,7 +1019,7 @@ if ($forumExist !== false) {
 			<input type="submit" value="Leave Guild">
 		</li>
 	</ul>
-</form>
+</form></div></div></div></article>
 <?php
 } // display form if user has a character in guild
 } // user logged in

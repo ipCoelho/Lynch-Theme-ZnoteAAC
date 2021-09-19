@@ -30,6 +30,10 @@ if ($cache->hasExpired()) {
 }
 if ($killers) {
 ?>
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <h1>Biggest Murders</h1>
 <table id="killersTable" class="table table-striped">
 	<tr class="yellow">
@@ -42,12 +46,16 @@ if ($killers) {
 		echo "<td width='30%'>". $killer['kills'] ."</td>";
 		echo '</tr>';
 	} ?>
-</table>
+</table></div></div></div></article>
 <?php
 } else echo 'No player kills exist.';
 
 if ($victims) {
 ?>
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <h1>Biggest Victims</h1>
 <table id="victimsTable" class="table table-striped">
 	<tr class="yellow">
@@ -60,12 +68,16 @@ if ($victims) {
 		echo "<td width='30%'>". $victim['Deaths'] ."</td>";
 		echo '</tr>';
 	} ?>
-</table>
+</table></div></div></div></article>
 <?php
 } else echo 'No player kills exist.';
 
 if ($latests) {
 ?>
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <h1>Latest kills</h1>
 <table id="killersTable" class="table table-striped">
 	<tr class="yellow">
@@ -80,7 +92,7 @@ if ($latests) {
 		echo "<td width='35%'><a href='characterprofile.php?name=". $last['victim'] ."'>". $last['victim'] ."</a></td>";
 		echo '</tr>';
 	} ?>
-</table>
+</table></div></div></div></article>
 <?php
 } else echo 'No player kills exist.';
 
@@ -96,6 +108,10 @@ if ($latests) {
 
 	if ($deaths && !empty($deaths)) {
 	?>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<h1>Latest Killers</h1>
 		<table id="deathsTable" class="table table-striped">
 			<tr class="yellow">
@@ -110,7 +126,7 @@ if ($latests) {
 				echo "<td>At level ". $death['level'] .": <a href='characterprofile.php?name=". $death['victim'] ."'>". $death['victim'] ."</a></td>";
 				echo '</tr>';
 			} ?>
-		</table>
+		</table></div></div></div></article>
 		<?php
 	} else echo 'No player deaths exist.';
 }

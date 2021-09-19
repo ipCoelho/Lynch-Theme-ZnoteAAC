@@ -6,7 +6,10 @@
 $logged_in = user_logged_in();
 if ($logged_in === true) {
 	if (!empty($_POST['new'])) {
-		?>
+		?><article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<h1>Create image article</h1>
 		<p>This gallery is powered by IMGUR image host.</p>
 		<form action="" method="post" enctype="multipart/form-data">
@@ -14,7 +17,7 @@ if ($logged_in === true) {
 			Image Title:<br /><input type="text" name="title" size="70"><br />
 			Image Description:<br /><textarea name="desc" cols="55" rows="15"></textarea><br />
 			<input type="submit" value="Upload Image" name="submit">
-		</form>
+		</form></div></div></div></article>
 		<?php
 	}
 
@@ -47,7 +50,10 @@ if ($logged_in === true) {
 			// Insert to database
 			$inserted = insertImage((int)$session_user_id, $title, $desc, $image_url, $image_delete);
 			if ($inserted === true) {
-				?>
+				?><article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 				<h1>Image Posted</h1>
 				<p>However, your image will not be listed until a GM have verified it.<br />
 				Feel free to remind the GM in-game to login on website and approve the image post.</p>
@@ -71,25 +77,34 @@ if ($logged_in === true) {
 						<p><?php echo $descr; ?></p>
 						</td>
 					</tr>
-				</table>
+				</table></div></div></div></article>
 				<?php
 			} else { // Image not inserted because it already exist
-				?>
+				?><article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 				<h1>Image already exist</h1>
-				<p>The image has already been posted. However, images will not be listed until a GM have verified it.</p>
+				<p>The image has already been posted. However, images will not be listed until a GM have verified it.</p></div></div></div></article>
 				<?php
 			}
 
 		} else { // Failed to locate imageSrc
-			?>
+			?><article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<h1>Failed to find the image</h1>
-			<p>We failed to find the image, did you give us the Image code from <a href="http://www.freeimagehosting.net/">www.freeimagehosting.net</a>?</p>
+			<p>We failed to find the image, did you give us the Image code from <a href="http://www.freeimagehosting.net/">www.freeimagehosting.net</a>?</p></div></div></div></article>
 			<?php
 		}
 	}
 }
 if (empty($_POST)) {
-	?>
+	?><article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<h1>Gallery</h1>
 	<?php if ($logged_in === true) { ?>
 	<form action="" method="post">
@@ -121,7 +136,7 @@ if (empty($_POST)) {
 					<p><?php echo $descr; ?></p>
 					</td>
 				</tr>
-			</table>
+			</table></div></div></div></article>
 		<?php }
 	} else echo '<h2>There are currently no public images.</h2>';
 

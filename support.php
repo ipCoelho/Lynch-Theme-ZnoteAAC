@@ -27,6 +27,10 @@ $writeHeader = true;
 if (!empty($srtGrp)) {
 	foreach (array_reverse($srtGrp) as $grpName => $grpList) {
 		?>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<table id="supportTable" class="table table-striped">
 			<?php if ($writeHeader) {
 			$writeHeader = false; ?>
@@ -47,7 +51,7 @@ if (!empty($srtGrp)) {
 				}
 			}
 			?>
-		</table>
+		</table></div></div></div></article>
 		<?php
 	}
 }

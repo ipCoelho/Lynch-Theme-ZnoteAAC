@@ -150,21 +150,29 @@ if ($house !== false && $config['ServerEngine'] === 'TFS_10') {
 
 				// Congratulate user and tell them they still has to pay rent (if rent > 0)
 				?>
+				<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 				<p><strong>Congratulations!</strong>
 					<br>You now own this house!
 					<br>Remember to say <strong>!shop</strong> in-game to process your ownership!
 					<?php if ($house['rent'] > 0): ?>
 						<br>Keep in mind you still need to pay rent on this house, make sure you have enough bank balance to cover it!
 					<?php endif; ?>
-				</p>
+				</p></div></div></div></article>
 				<?php
 			} else {
 				?>
+				<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 				<p><strong>Error:</strong>
 					<br>Either your level is too low, or your player already have or is bidding on another house.
 					<br>Your level: <?php echo $player['level']; ?>. Minimum level to buy house: <?php echo $config['houseConfig']['levelToBuyHouse']; ?>
 					<br>Your house/bid count: <?php echo $pHouseCount['value']; ?>. Maximum house per player: <?php echo $config['houseConfig']['housesPerPlayer']; ?>.
-				</p>
+				</p></div></div></div></article>
 				<?php
 			}
 		}
@@ -172,6 +180,10 @@ if ($house !== false && $config['ServerEngine'] === 'TFS_10') {
 
 	// HTML structure and logic
 	?>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<h1>House: <?php echo $house['name']; ?></h1>
 	<ul>
 		<li><b>Town</b>:
@@ -189,7 +201,7 @@ if ($house !== false && $config['ServerEngine'] === 'TFS_10') {
 		<?php if ($house['owner'] == 0 && isset($house['points'])): ?>
 			<li><b>Shop points</b>: <?php echo $house['points']; ?></li>
 		<?php endif; ?>
-	</ul>
+	</ul></div></div></div></article>
 	<?php
 	// AUCTION MARKUP INIT
 	if ($house['owner'] == 0) {
@@ -215,6 +227,10 @@ if ($house !== false && $config['ServerEngine'] === 'TFS_10') {
 						$charData[$char['id']] = $char;
 					}
 					?>
+					<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 					<form class="house_form_bid" action="" method="post">
 						<select name="char">
 							<?php
@@ -225,9 +241,13 @@ if ($house !== false && $config['ServerEngine'] === 'TFS_10') {
 						</select>
 						<input type="text" name="amount" placeholder="Min bid: <?php echo $minbid + 1; ?>">
 						<input type="submit" value="Bid on this house">
-					</form>
+					</form></div></div></div></article>
 					<?php if ($house['owner'] == 0 && isset($house['points'])): ?>
 						<br>
+						<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 						<?php if ((int)$user_znote_data['points'] >= $house['points']): ?>
 							<form class="house_form_buy" action="" method="post">
 								<p>Your account has <strong><?php echo $user_znote_data['points']; ?></strong> available shop points.</p>
@@ -251,9 +271,13 @@ if ($house !== false && $config['ServerEngine'] === 'TFS_10') {
 		} else echo "<br><b>Bid has ended! House transaction will proceed next server restart assuming active bidder have sufficient balance.</b>";
 	}
 } else {
-	?>
+	?></div></div></div></article>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<h1>No house selected.</h1>
-	<p>Go back to the <a href="houses.php">house list</a> and select a house for further details.</p>
+	<p>Go back to the <a href="houses.php">house list</a> and select a house for further details.</p>/</div></div></div></article>
 	<?php
 }
 include 'layout/overall/footer.php'; ?>

@@ -46,6 +46,10 @@ if (!empty($_GET['warid'])) {
 			else $leading = "Tie";
 		}
 		?>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<ul class="war_list">
 			<li>
 				War status: <?php echo $config['war_status'][$war['status']]; ?>.
@@ -65,10 +69,13 @@ if (!empty($_GET['warid'])) {
 				?>
 			</li>
 			<?php } ?>
-		</ul>
+		</ul></div></div></div></article>
 		<?php
 		if ($config['ServerEngine'] == 'TFS_02' || $config['ServerEngine'] == 'TFS_10' || $config['ServerEngine'] == 'OTHIRE') {
-		?>
+		?><article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<table id="guildwarTable" class="table table-striped table-hover">
 				<tr class="yellow">
 					<th>Killer's guild:</th>
@@ -87,7 +94,7 @@ if (!empty($_GET['warid'])) {
 						echo '</tr>';
 					}
 					?>
-			</table>
+			</table></div></div></div></article>
 		<?php
 		}
 		if ($config['ServerEngine'] == 'TFS_03') {
@@ -159,7 +166,10 @@ if (!empty($_GET['warid'])) {
 		else if ($config['ServerEngine'] == 'TFS_03') $killsdata[$wars['id']] = get_war_kills03($wars['id']);
 	}
 		?>
-
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<table id="guildwarViewTable" class="table table-striped table-hover">
 			<tr class="yellow">
 				<th>Attacking Guild:</th>
@@ -188,7 +198,7 @@ if (!empty($_GET['warid'])) {
 					echo '</tr>';
 				}
 				?>
-		</table>
+		</table></div></div></div></article>
 
 		<?php
 	} else {

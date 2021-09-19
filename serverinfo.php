@@ -70,9 +70,13 @@ if (user_logged_in() && is_admin($user_data)) {
 	} else {
 		$stagesData = $cache->load();
 		?>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<form action="">
 			<input type="submit" name="loadStages" value="Load stages.xml">
-		</form>
+		</form></div></div></div></article>
 		<?php
 	}
 	// END STAGES XML TO PHP ARRAY
@@ -191,11 +195,15 @@ if (user_logged_in() && is_admin($user_data)) {
 		$luaConfig = $cache->load();
 		?>
 		<br>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<form action="" method="POST">
 			<label for="configData">Find your OT server folder, put the text inside config.lua into this text field:</label><br>
 			<textarea name="configData" placeholder="Open config.lua and copy the content into this text area."></textarea><br>
 			<input type="submit" name="loadConfig" value="Load config data">
-		</form>
+		</form></div></div></div></article>
 		<?php
 	}
 } else {
@@ -207,7 +215,10 @@ $stages = false;
 
 // Render HTML
 ?>
-
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <h1>Server Information</h1>
 <p>Here you will find all basic information about <b><?php echo $config['site_title']; ?></b></p>
 
@@ -388,7 +399,7 @@ $stages = false;
 				</tr>
 			<?php endif; ?>
 		</tbody>
-	</table>
+	</table></div></div></div></article>
 <?php else: ?>
 	<p>The server administrator has yet to import server information to this page.</p>
 <?php endif;

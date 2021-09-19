@@ -93,9 +93,13 @@ if (user_logged_in() && is_admin($user_data)) {
 	} else {
 		$items = $itemsCache->load();
 		?>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<form action="">
 			<input type="submit" name="update" value="Generate new cache">
-		</form>
+		</form></div></div></div></article>
 		<?php
 	}
 	// END ITEMS XML TO PHP ARRAY
@@ -181,9 +185,13 @@ if ($items) {
 	// Render HTML
 	if(isset($_GET['slot']) && ($slottype_name == 'null')) header("Location:items.php");
 	?>
-
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<h1 id="items">Items<?php if (isset($_GET['slot'])) echo ' ('.$slottype_name.')';?></h1>
 	<?php if(empty($_GET['slot'])) { ?>
+
 	<table>
 		<tbody>
 			<tr>
@@ -209,8 +217,12 @@ if ($items) {
 				<td style="text-align:center;"><a href="?slot=backpack">Backpacks<br><img src="<?php echo $itemServer.'9774.gif'; ?>" /></a></td>
 			</tr>
 		</tbody>
-	</table>
+	</table></div></div></div></article>
 	<?php } else {  ?>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<table>
 		<tbody>
 			<tr>
@@ -379,13 +391,17 @@ if ($items) {
 		} ?>
 
 		</tbody>
-	</table>
+	</table></div></div></div></article>
 
 	<?php
 	}
 } else { ?>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<h1>Items</h1>
-	<p>Items have currently not been loaded into the website by the server admin.</p>
+	<p>Items have currently not been loaded into the website by the server admin.</p></div></div></div></article>
 <?php }
 } else {
 	echo 'Items\' page not enabled.';

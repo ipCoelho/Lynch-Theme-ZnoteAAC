@@ -82,7 +82,10 @@ if ($loggedin === true) {
 
 if ($shop['enabled']) {
 ?>
-
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <h1>Shop Offers</h1>
 <?php
 if ($loggedin === true) {
@@ -370,7 +373,7 @@ foreach ($shop_list as $key => $offer) {
 			<?php endif; ?>
 		</tr>
 	<?php endforeach; ?>
-</table>
+</table></div></div></div></article>
 <?php endif; ?>
 
 <?php if ($shop['enableShopConfirmation']) { ?>
