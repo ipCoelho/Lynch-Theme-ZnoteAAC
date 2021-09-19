@@ -14,7 +14,8 @@ Forum: https://lepiigortv.com/forum
 
 - Drag and drop all files inside of htdocs/www folder.
 
-![1](https://user-images.githubusercontent.com/89811188/133918744-3a1253f7-43e1-4bd6-afab-28fd73d73b56.png)
+![3](https://user-images.githubusercontent.com/89811188/133921081-00a78cef-8749-4c94-9f9c-61f87f1a8d3d.png)
+
 
 
 
