@@ -64,6 +64,7 @@ mysql_update("UPDATE `players` SET `health`='". $newhp ."', `healthmax`='". $new
 			mysql_update("UPDATE `players` SET `health`='". $newhp ."', `healthmax`='". $newhp ."', `mana`='". $newmp ."', `manamax`='". $newmp ."', `cap`='". $newcap ."', `vocation`='". (int)$_POST['vocation'] ."', `skill_fist`='". (int)$_POST['fist'] ."', `skill_club`='". (int)$_POST['club'] ."', `skill_sword`='". (int)$_POST['sword'] ."', `skill_axe`='". (int)$_POST['axe'] ."', `skill_dist`='". (int)$_POST['dist'] ."', `skill_shielding`='". (int)$_POST['shield'] ."', `skill_fishing`='". (int)$_POST['fish'] ."', `maglevel`='". (int)$_POST['magic'] ."', `level`='". $level ."', `experience`='". level_to_experience($level) ."' WHERE `id`='$pid' LIMIT 1;");
 		}
 ?>
+
 <h1>Player skills updated!</h1>
 <?php
 	} else {
@@ -113,6 +114,10 @@ if ($name !== false) {
 }
 
 ?>
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <form action="" method="<?php if (!$name) echo "get"; else echo "post";?>">
 	<input type="hidden" name="pid" value="<?php echo $pid; ?>">
 	<table class="table">
@@ -183,7 +188,7 @@ if ($name !== false) {
 		</tr>
 	</table>
 	<a href="admin_skills.php">Reset fields / search new character</a>
-</form>
+</form></div></div></div></article>
 <?php
 // end
  include 'layout/overall/footer.php'; ?>

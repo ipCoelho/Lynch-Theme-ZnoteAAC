@@ -9,7 +9,10 @@ $prices = $config['paypal_prices'];
 
 if ($paypal['enabled']) {
 ?>
-
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <h1>Buy Points</h1>
 <h2>Buy points using Paypal:</h2>
 <table id="buypointsTable" class="table table-striped table-hover">
@@ -52,12 +55,15 @@ if ($paypal['enabled']) {
 		echo '</tr>';
 		}
 		?>
-</table>
+</table></div></div></div></article>
 <?php } ?>
 
 <?php
 if ($config['pagseguro']['enabled'] == true) {
-?>
+?><article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<h2>Buy points using Pagseguro:</h2>
 	<form target="pagseguro" action="https://<?=hhb_tohtml($pagseguro['urls']['www'])?>/checkout/checkout.jhtml" method="post">
 		<input type="hidden" name="email_cobranca" value="<?=hhb_tohtml($pagseguro['email'])?>">
@@ -71,13 +77,17 @@ if ($config['pagseguro']['enabled'] == true) {
 		<input type="hidden" name="item_valor_1" value="<?=$pagseguro['price']?>">
 		<input type="submit" value="  PURCHASE  ">
 	</form>
-	<br>
+	<br></div></div></div></article>
 <?php } ?>
 
 <?php
 if ($config['paygol']['enabled'] == true) {
 ?>
 <!-- PayGol Form using Post method -->
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <h2>Buy points using Paygol:</h2>
 <?php $paygol = $config['paygol']; ?>
 <p><?php echo $paygol['price'] ." ". hhb_tohtml($paygol['currency']) ."~ for ". $paygol['points'] ." points:"; ?></p>
@@ -90,7 +100,7 @@ if ($config['paygol']['enabled'] == true) {
 	<input type="hidden" name="pg_return_url" value="<?php echo hhb_tohtml($paygol['returnURL']); ?>">
 	<input type="hidden" name="pg_cancel_url" value="<?php echo hhb_tohtml($paygol['cancelURL']); ?>">
 	<input type="image" name="pg_button" src="https://www.paygol.com/micropayment/img/buttons/150/black_en_pbm.png" border="0" alt="Make payments with PayGol: the easiest way!" title="Make payments with PayGol: the easiest way!">
-</form>
+</form></div></div></div></article>
 <?php }
 
 if (!$config['paypal']['enabled'] && !$config['paygol']['enabled'] && !$config['pagseguro']['enabled']) echo '<h1>Buy Points system disabled.</h1><p>Sorry, this functionality is disabled.</p>';

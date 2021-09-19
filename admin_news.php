@@ -101,6 +101,10 @@ if (empty($_POST) === false) {
 }
 
 ?>
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <h1>News admin panel</h1>
 <form action="" method="post">
 	<input type="hidden" name="option" value="a!0">
@@ -146,7 +150,7 @@ if ($news !== false) {
 			echo '</tr>';
 		}
 		?>
-	</table>
+	</table></div></div></div></article>
 	<?php
 }
 include 'layout/overall/footer.php'; ?>

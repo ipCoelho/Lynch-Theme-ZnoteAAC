@@ -37,6 +37,10 @@ if ($view !== false){
 
 	$ticketData = mysql_select_single("SELECT * FROM znote_tickets WHERE id='$view' LIMIT 1;");
 	?>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<h1>View Ticket #<?php echo $ticketData['id']; ?></h1>
 	<table class="znoteTable ThreadTable table table-striped">
 		<tr class="yellow">
@@ -55,12 +59,16 @@ if ($view !== false){
 				<p><?php echo nl2br($ticketData['message']); ?></p>
 			</td>
 		</tr>
-	</table>
+	</table></div></div></div></article>
 	<?php
 	$replies = mysql_select_multi("SELECT * FROM znote_tickets_replies WHERE tid='$view' ORDER BY `created`;");
 	if ($replies !== false) {
 		foreach($replies as $reply) {
 			?>
+			<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<table class="znoteTable ThreadTable table table-striped">
 				<tr class="yellow">
 					<th>
@@ -78,13 +86,17 @@ if ($view !== false){
 						<p><?php echo nl2br($reply['message']); ?></p>
 					</td>
 				</tr>
-			</table>
+			</table></div></div></div></article>
 		<?php
 		}
 	}
 	?>
 
 	<!-- Open/Close Ticket -->
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<table class="znoteTable ThreadTable table table-striped">
 		<tr>
 			<td>
@@ -104,15 +116,19 @@ if ($view !== false){
 				</form>
 			</td>
 		</tr>
-	</table>
+	</table></div></div></div></article>
 
 	<?php if ($ticketData['status'] !== 'CLOSED') { ?>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<hr class="bighr">
 		<form action="" method="post">
 			<input type="hidden" name="username" value="ADMIN"><br>
 			<textarea class="forumReply" name="reply_text" style="width: 610px; height: 150px"></textarea><br>
 			<input name="" type="submit" value="Post Reply" class="btn btn-primary">
-		</form>
+		</form></div></div></div></article>
 	<?php } ?>
 	<?php
 } else {
@@ -121,7 +137,10 @@ if ($view !== false){
 	<?php
 	$tickets = mysql_select_multi("SELECT id,subject,creation,status FROM znote_tickets ORDER BY creation DESC");
 	if ($tickets !== false) {
-		?>
+		?><article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<table>
 			<tr class="yellow">
 				<td>ID:</td>
@@ -139,7 +158,7 @@ if ($view !== false){
 					echo '</tr>';
 				}
 				?>
-		</table>
+		</table></div></div></div></article>
 		<?php
 	} else echo 'No helpdesk tickets has been submitted.';
 }

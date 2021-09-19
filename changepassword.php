@@ -38,7 +38,10 @@ if (empty($_POST) === false) {
 }
 
 include 'layout/overall/header.php'; ?>
-
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <h1>Change Password:</h1>
 
 <?php
@@ -85,7 +88,7 @@ if (isset($_GET['success']) && empty($_GET['success'])) {
 				<input type="submit" value="Change password">
 			</li>
 		</ul>
-	</form>
+	</form></div></div></div></article>
 <?php
 }
 include 'layout/overall/footer.php'; ?>

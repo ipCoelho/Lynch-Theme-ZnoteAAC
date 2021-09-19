@@ -8,6 +8,10 @@ $orders = mysql_select_multi('SELECT * FROM `znote_shop_orders` ORDER BY `id` DE
 $order_types = array(1 => 'Item', 2 => 'Premium Days', 3 => 'Gender Change', 4 => 'Name Change', 5 => 'Outfits', 6 =>'Mounts');
 $items = getItemList();
 ?>
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <h1>Shop Logs</h1>
 
 <h2>Pending Orders</h2>
@@ -33,12 +37,16 @@ $items = getItemList();
 		</tr>
 		<?php } ?>
 	</tbody>
-</table>
+</table></div></div></div></article>
 
 <?php
 $orders = mysql_select_multi('SELECT * FROM `znote_shop_logs` ORDER BY `id` DESC;');
 $order_types = array(1 => 'Item', 2 => 'Premium Days', 3 => 'Gender Change', 4 => 'Name Change', 5 => 'Outfit', 6 =>'Mount', 7 =>'Custom');
 ?>
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <h2>Order History</h2>
 <p>This list contains all transactions bought in the shop.</p>
 <table>
@@ -64,7 +72,7 @@ $order_types = array(1 => 'Item', 2 => 'Premium Days', 3 => 'Gender Change', 4 =
 		</tr>
 		<?php } ?>
 	</tbody>
-</table>
+</table></div></div></div></article>
 <?php
 include 'layout/overall/footer.php';
 ?>

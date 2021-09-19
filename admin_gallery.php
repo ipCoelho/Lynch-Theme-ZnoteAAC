@@ -63,6 +63,10 @@ $images = fetchImages(1);
 if ($images != false) {
 	foreach($images as $image) {
 		?>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<table>
 			<tr class="yellow">
 				<td><h2><?php echo $image['title']; ?><form action="" method="post"><input type="submit" name="accept" value="<?php echo $image['id']; ?>:Accept Image"/></form><form action="" method="post"><input type="submit" name="delete" value="<?php echo $image['id']; ?>:Delete Image"/></form></h2></td>
@@ -81,7 +85,7 @@ if ($images != false) {
 				<p><?php echo $descr; ?></p>
 				</td>
 			</tr>
-		</table>
+		</table></div></div></div></article>
 	<?php }
 } else echo '<h2>All good, no new images to moderate.</h2>';
 
@@ -90,6 +94,10 @@ $images = fetchImages(2);
 if ($images != false) {
 	foreach($images as $image) {
 		?>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<table>
 			<tr class="yellow">
 				<td><h2><?php echo $image['title']; ?><form action="" method="post"><input type="submit" name="delete" value="<?php echo $image['id']; ?>:Delete Image"/></form></h2></td>
@@ -108,7 +116,7 @@ if ($images != false) {
 				<p><?php echo $descr; ?></p>
 				</td>
 			</tr>
-		</table>
+		</table></div></div></div></article>
 	<?php }
 } else echo '<h2>There are currently no public images.</h2>';
 
@@ -117,6 +125,10 @@ $images = fetchImages(3);
 if ($images != false) {
 	foreach($images as $image) {
 		?>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<table>
 			<tr class="yellow">
 				<td><h2><?php echo $image['title']; ?><form action="" method="post">
@@ -139,7 +151,7 @@ if ($images != false) {
 				<p><?php echo $descr; ?></p>
 				</td>
 			</tr>
-		</table>
+		</table></div></div></div></article>
 	<?php }
 } else echo '<h2>There are currently no deleted images.</h2>';
 // end

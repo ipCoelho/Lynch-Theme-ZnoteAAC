@@ -297,6 +297,10 @@ if ($auction['characterAuction']) {
 				?>
 				<p>Detailed character information. <a href="/auctionChar.php?action=list">Go back to list.</a></p>
 				<!-- Basic info -->
+				<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 				<table class="auction_char">
 					<tr class="yellow">
 						<td>Level</td>
@@ -325,11 +329,15 @@ if ($auction['characterAuction']) {
 							</td>
 						</tr>
 					<?php endif; ?>
-				</table>
+				</table></div></div></div></article>
 				<!-- Bid on character -->
 				<?php
 				if ($character['own'] == 0) {
 					if (is_array($account) && !empty($account)): ?>
+						<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 						<p>You have <strong><?php echo $account['points']; ?></strong> shop points remaining.</p>
 
 						<?php if ((int)$character['bidder_account_id'] === $this_account_id): ?>
@@ -378,11 +386,15 @@ if ($auction['characterAuction']) {
 						<?php else: ?>
 							<p>The bidding period will last for <?php echo toDuration($character['time_end']-time()); ?>. After this period, you can reclaim your character if nobody has bid on it.</p>
 						<?php endif; ?>
-					</p>
+					</p></div></div></div></article>
 					<?php
 				}
 				?>
 				<!-- SKILLS -->
+				<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 				<table class="auction_skills">
 					<tr class="yellow"><td colspan="4">Character skills:</td></tr>
 					<tr><td>magic</td><td><?php echo $character['magic']; ?></td></tr>
@@ -393,7 +405,7 @@ if ($auction['characterAuction']) {
 					<tr><td>dist</td><td><?php echo $character['dist']; ?></td></tr>
 					<tr><td>shielding</td><td><?php echo $character['shielding']; ?></td></tr>
 					<tr><td>fishing</td><td><?php echo $character['fishing']; ?></td></tr>
-				</table>
+				</table></div></div></div></article>
 				<?php
 				$server = $config['shop']['imageServer'];
 				$imageType = $config['shop']['imageType'];
@@ -401,6 +413,10 @@ if ($auction['characterAuction']) {
 				?>
 				<!-- Player items -->
 				<?php if (is_array($player_items) && !empty($player_items)): ?>
+				<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 					<table>
 						<tr class="yellow">
 							<td colspan="3">Player items:</td>
@@ -417,10 +433,14 @@ if ($auction['characterAuction']) {
 								<td><?php echo $item['count']; ?></td>
 							</tr>
 						<?php endforeach; ?>
-					</table>
+					</table></div></div></div></article>
 				<?php endif; ?>
 				<!-- Depot items -->
 				<?php if (is_array($depot_items) && !empty($depot_items)): ?>
+				<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 					<table>
 						<tr class="yellow">
 							<td colspan="3">Depot items:</td>
@@ -437,7 +457,7 @@ if ($auction['characterAuction']) {
 								<td><?php echo $item['count']; ?></td>
 							</tr>
 						<?php endforeach; ?>
-					</table>
+					</table></div></div></div></article>
 				<?php endif;
 			} else {
 				$action = 'list';
@@ -723,6 +743,10 @@ if ($auction['characterAuction']) {
 		if (!empty($errors)) {
 			//data_dump($errors, false, "Errors:");
 			?>
+			<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<table class="auction_error">
 				<tr class="yellow">
 					<td>#</td>
@@ -734,7 +758,7 @@ if ($auction['characterAuction']) {
 						<td><?php echo $error; ?></td>
 					</tr>
 				<?php endforeach; ?>
-			</table>
+			</table></div></div></div></article>
 			<?php
 		}
 		$action = 'list';
@@ -773,6 +797,10 @@ if ($auction['characterAuction']) {
 		//data_dump($pending, false, "Pending characters:");
 		if ($pending !== false) {
 			?>
+			<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<h2>Congratulations!</h2>
 			<p>You have <?php echo (COUNT($pending) > 1) ? 'characters' : 'a character'; ?> ready to claim!</p>
 			<?php foreach($pending as $character): ?>
@@ -805,7 +833,7 @@ if ($auction['characterAuction']) {
 							</form>
 						</td>
 					</tr>
-			</table>
+			</table></div></div></div></article>
 			<?php endforeach; ?>
 			<h2>Ongoing auctions:</h2>
 			<?php
@@ -844,6 +872,10 @@ if ($auction['characterAuction']) {
 		}
 		if (is_array($characters) && !empty($characters)):
 			?>
+		<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<table class="auction_char">
 				<tr class="yellow">
 					<td>Level</td>
@@ -875,7 +907,7 @@ if ($auction['characterAuction']) {
 						<td><?php echo ($ended) ? 'Instant' : 'Bidding<br>('.toDuration(($character['time_end'] - time())).')'; ?></td>
 					</tr>
 				<?php endforeach; ?>
-			</table>
+			</table></div></div></div></article>
 			<?php
 		endif;
 		?>
@@ -911,6 +943,10 @@ if ($auction['characterAuction']) {
 		if (is_array($own_characters) && !empty($own_characters)) {
 			$max = ($own_characters[0]['points'] / $auction['deposit']) * 100;
 			?>
+			<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 			<p><a href="/auctionChar.php?action=list">Go back to list.</a></p>
 			<form action="/auctionChar.php" method="POST">
 				<input type="hidden" name="action" value="add">
@@ -950,7 +986,7 @@ if ($auction['characterAuction']) {
 				<br>1. Minimum level: <?php echo $auction['lowestLevel']; ?>
 				<br>2. Minimum already earned shop points: <?php echo $minToCreate; ?>
 				<br>3. Eligible characters must be offline.
-			</p>
+			</p></div></div></div></article>
 			<?php
 		}
 	}

@@ -122,6 +122,10 @@ if (!empty($_POST)) {
 
 	// Create HTML form
 	?>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<div style="width: 300px; margin: auto;">
 		<form action="admin_reports.php" method="POST">
 			Player: <a target="_BLANK" href="characterprofile.php?name=<?php echo $report['name']; ?>"><?php echo $report['name']; ?></a>
@@ -158,7 +162,7 @@ if (!empty($_POST)) {
 			<br>
 			<input type="submit" value="Update Report" style="width: 100%;">
 		</form>
-	</div>
+	</div></div></div></div></article>
 	<?php
 }
 
@@ -166,6 +170,10 @@ if (!empty($_POST)) {
 if ($reportsData !== false) {
 	// Render HTML
 	?>
+	<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 	<center>
 		<?php
 		foreach ($reports as $statusId => $statusArray) {
@@ -198,7 +206,7 @@ if ($reportsData !== false) {
 			?></table><?php
 		}
 		?>
-	</center>
+	</center></div></div></div></article>
 	<?php
 } else echo "<h2>No reports submitted.</h2>";
 ?>

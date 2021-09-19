@@ -128,6 +128,10 @@ $completed = mysql_select_multi("
 	ORDER BY `za`.`time_end` desc
 ");
 ?>
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <h1>Character Auction History</h1>
 <p><strong>Let players sell, buy and bid on characters.</strong>
 	<br>Creates a deeper shop economy, encourages players to spend more money in shop for points.
@@ -226,7 +230,7 @@ if ($completed !== false): ?>
 				<td colspan="5"></td>
 			</tr>
 		<?php endforeach; ?>
-	</table>
+	</table></div></div></div></article>
 <?php endif;
 // end
  include 'layout/overall/footer.php'; ?>

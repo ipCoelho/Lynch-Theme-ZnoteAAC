@@ -39,18 +39,24 @@ if (user_logged_in()) {
 			$old = mysql_select_single("SELECT `text` FROM `znote_changelog` WHERE `id`='$changelogId' LIMIT 1;");
 		}
 		// HTML to create or update
-		?>
+		?><article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 		<h3>Add or update changelog</h3>
 		<form action="" method="POST">
 			<input name="changelogId" type="hidden" value="<?php echo ($action === 2) ? $changelogId : 0; ?>">
 			<textarea rows="7" cols="40" maxlength="254" name="changelogText"><?php echo ($action === 2) ? $old['text'] : ''; ?></textarea><br>
 			<input type="submit" value="Add or update changelog">
-		</form>
+		</form></div></div></div></article>
 		<?php
 	}
 }
 ?>
-
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <h1>Changelog</h1>
 <?php
 $cache = new Cache('engine/cache/changelog');
@@ -104,7 +110,7 @@ if (isset($changelogs) && !empty($changelogs) && $changelogs !== false) {
 		<?php
 		}
 		?>
-	</table>
+	</table></div></div></div></article>
 	<?php
 } else {
 	?>

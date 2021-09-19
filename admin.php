@@ -173,6 +173,10 @@ echo "Running Znote AAC Version: ". hhb_tohtml($basic['version']) .".<br>";
 echo "Last cached on: ". hhb_tohtml(getClock($basic['cached'], true)) .".<br>";
 ?>
 </p>
+<article>
+<div class='page'>
+<div class='news'>
+<div class='contentn' style='width: auto;'>
 <ul>
 	<li>
 		<b>Permanently delete/erase character from database:</b>
@@ -343,6 +347,6 @@ echo "Last cached on: ". hhb_tohtml(getClock($basic['cached'], true)) .".<br>";
 		</form>
 	</li>
 </ul>
-<div id="twitter"><?php include 'twtrNews.php'; ?></div>
+<div id="twitter"><?php include 'twtrNews.php'; ?></div></div></div></div></article>
 
 <?php include 'layout/overall/footer.php';
