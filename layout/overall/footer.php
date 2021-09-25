@@ -1,6 +1,7 @@
 
 </section>
 <footer>
+	<!-- Copyrights, please remove link if you wish, but give credits to the creator about theme, thanks you -->
 <font color="#F0E790">&copy; 2021. Theme Created by <a href="https://lepiigortv.com">Alex45</a>.</font>
 <br>
 </footer>
