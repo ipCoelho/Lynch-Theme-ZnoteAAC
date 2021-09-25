@@ -8,7 +8,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="keywords" content="Tibia, private server, online, real map, internacional, international, english, 1x, 5x, 10x, 30x, 50x, 70x, 100x, 150x, 200x, 300x, 1000x, free fun, new server, pt, es, mmropg, alex45, webdesigner, forum, server, custom map, 8.6, 10.98, 12x" />
 <meta name="description" content="Tibia Server" />
+	<!-- Change your Favicon here -->
 <link rel="shortcut icon" href="imgs/favicon.ico">
+	<!-- Change your Title here -->
 <title>Tibia Mmorpg Server</title>
 <meta property="og:title" content="Tibia Server" />
 <meta property="og:url" content="index.php" />
@@ -40,6 +42,7 @@
 <span class='ntxt'></span>
 <span class='ndesc'>Server Info</span>
 <div style='left: -23px;'>
+	<!-- Change your Menu Links here -->
 <a href='highscores.php'>Highscores</a>
 <a href='killers.php'>Top Frags</a>
 <a href='guilds.php'>Guilds</a>
@@ -80,6 +83,7 @@
 <a href='forum.php' class='forum-button' target='_blank'></a>
 <br>
 <aside>
+	<!-- If User logged in it will show my account and settings instead of register -->
 <?php if (user_logged_in() === true): ?>
 <div class='box'>
 <div class='title'>
@@ -100,7 +104,7 @@
 			
 			<a href="logout.php" class="default">
 				Logout</a>
-
+<!-- End -->
 <?php else: ?>
 <div class='box'>
 <div class='title'>
@@ -127,6 +131,7 @@
 </div><div class='box'>
 <div class='title'>
 <div class='bg'></div>
+	<!-- Top 5 Players -->
 <div class='txt'>Top Players</div>
 </div>
 
